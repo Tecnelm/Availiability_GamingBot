@@ -30,4 +30,5 @@ Startup:
 
 Server:
   port: $port
+  ip: $address
 
