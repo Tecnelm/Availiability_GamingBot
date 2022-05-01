@@ -1,0 +1,33 @@
+Discord:
+  token: "NzE5NDcxMjEyODAzMjYwNDU4.Xt37yQ.MejqH440ZchnqbBFkwU3qQn4nC0"
+  commande:
+    start: "!"
+    cmd:
+      - "pong"
+      - "ask"
+      - "help"
+      - "start"
+  response:
+    help:
+      - "!pong"
+      - "!ask: affiche depuis combien de temps le pc n'est pas en activité"
+      - "!help: affiche les commandes"
+      - "!start: démarre le PC"
+    startup: "démarage de l'ordinateur"
+
+    ask:
+      available: "l'odinateur est en innactivité depuis: "
+      unvailable: "L'ordinateur est actuelement non disponnible!"
+      switched_off: "L'ordinateur est actuelement éteind"
+      timeMin: 600
+      commande: "time"
+
+    pong: "Ping!"
+
+Startup:
+  wol:
+    mac: "d4:5d:64:b9:9f:f1"
+
+Server:
+  port: 6789
+
