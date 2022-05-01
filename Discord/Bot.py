@@ -61,7 +61,10 @@ class MyClient(discord.Client):
                         rm.append(client)
                         await message.channel.send(self.config["response"]["ask"]["switched_off"])
                     else:
-                        await message.channel.send(response)
+                        if( int(response) < self.config["response"]["ask"]["timeMin"]):
+                            await message.channel.send(self.config["response"]["ask"]["unvailable"])
+                        else:
+                            await message.channel.send(self.config["response"]["ask"]["available"]+response+" minutes!")
                 except socket.error:
                     pass
             for client in rm :
