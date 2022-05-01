@@ -4,6 +4,7 @@ import threading
 
 import yaml
 import threading
+import win32api
 
 class Client(threading.Thread):
     def __init__(self):
@@ -14,15 +15,18 @@ class Client(threading.Thread):
                 self.config = yaml.safe_load(config)
             except yaml.YAMLError as exc:
                 print("ERROR: Load Config File")
-        self.socket.connect(("",self.config["Server"]["port"]))
+        self.socket.connect((self.config["Server"]["ip"],self.config["Server"]["port"]))
 
     def run(self):
         while 1:
             r = self.socket.recv(999999).decode()
             print("receive message : "+r)
             if (r == self.config["Discord"]["response"]["ask"]["commande"]):
-                self.socket.send("900".encode())
-                print("send time")
+                self.socket.send(self.getIdleTime().encode())
+                print("send iddle time")
+
+    def getIdleTime(self):
+        return str(int((win32api.GetTickCount() - win32api.GetLastInputInfo()) / (1000.0*60)))
 
 client = Client()
 client.run()
