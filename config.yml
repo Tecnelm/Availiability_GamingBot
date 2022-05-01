@@ -1,5 +1,5 @@
 Discord:
-  token: "NzE5NDcxMjEyODAzMjYwNDU4.Xt37yQ.MejqH440ZchnqbBFkwU3qQn4nC0"
+  token: "$token"
   commande:
     start: "!"
     cmd:
