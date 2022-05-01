@@ -14,9 +14,7 @@ RUN apt-get update -y &&\
 	apt-get install -y git
 
 RUN git clone https://github.com/Tecnelm/Availiability_GamingBot
-COPY ./main.sh /main.sh
 WORKDIR /Availiability_GamingBot
-RUN pip3 install -r ./Requirement.txt
-
+RUN pip3 install -r ./Requirement.txt && chmod +x ./main.sh
 
 ENTRYPOINT ./main.sh
