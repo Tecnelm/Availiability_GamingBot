@@ -6,7 +6,7 @@ services:
     environment:
       - TOKEN="NzE5NDcxMjEyODAzMjYwNDU4.GZ2vsD.29ey6AEqrLcBslNtxxRcFVgjHp2Bi7254Rq8wg"
       - PORT=6789
-      - ADDRESS="127.0.0.1"
+      - ADDRESS="0.0.0.0"
       - MAC="d4:5d:64:b9:9f:f1"
       - TIME_MIN_AFK=600
     network_mode: host
