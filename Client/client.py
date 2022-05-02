@@ -4,7 +4,7 @@ import threading
 
 import yaml
 import threading
-import win32api
+#import win32api
 
 class Client(threading.Thread):
     def __init__(self):
@@ -26,7 +26,9 @@ class Client(threading.Thread):
                 print("send iddle time")
 
     def getIdleTime(self):
-        return str(int((win32api.GetTickCount() - win32api.GetLastInputInfo()) / (1000.0*60)))
+        return str(10)
+        #return str(int((win32api.GetTickCount() - win32api.GetLastInputInfo()) / (1000.0*60)))
 
-client = Client()
-client.run()
+if __name__ =='__main__':
+    client = Client()
+    client.run()

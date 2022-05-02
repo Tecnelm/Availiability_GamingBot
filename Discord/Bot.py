@@ -49,7 +49,6 @@ class MyClient(discord.Client):
         await message.channel.send(self.config["response"]["pong"])
 
     async def cmd_ask(self,message):
-        rm = []
         client_list = self.tcpServer.get_client()
         if len(client_list) == 0:
             await message.channel.send(self.config["response"]["ask"]["switched_off"])
@@ -57,16 +56,11 @@ class MyClient(discord.Client):
             for client in client_list:
                 try :
                     response = client.ask(self.config["response"]["ask"]["commande"])
-                    if len(response) == 0:
-                        rm.append(client)
-                        await message.channel.send(self.config["response"]["ask"]["switched_off"])
+                    if( int(response) < self.config["response"]["ask"]["timeMin"]):
+                        await message.channel.send(self.config["response"]["ask"]["unvailable"])
                     else:
-                        if( int(response) < self.config["response"]["ask"]["timeMin"]):
-                            await message.channel.send(self.config["response"]["ask"]["unvailable"])
-                        else:
-                            await message.channel.send(self.config["response"]["ask"]["available"]+response+" minutes!")
-                except socket.error:
-                    rm.append(client)
+                        await message.channel.send(self.config["response"]["ask"]["available"]+response+" minutes!")
+                except Exception:
+                    print("Removing Connexion de %s %s" % (client.ip, client.port, ))
+                    self.tcpServer.client.remove(client)
                     await message.channel.send(self.config["response"]["ask"]["switched_off"])
-            for client in rm :
-                self.tcpServer.client.remove(client)
