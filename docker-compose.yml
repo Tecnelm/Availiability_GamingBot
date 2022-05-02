@@ -6,8 +6,8 @@ services:
     environment:
       - TOKEN="NzE5NDcxMjEyODAzMjYwNDU4.GZ2vsD.29ey6AEqrLcBslNtxxRcFVgjHp2Bi7254Rq8wg"
       - PORT=6789
-      - ADDRESS="0.0.0.0"
+      - ADDRESS=''
       - MAC="d4:5d:64:b9:9f:f1"
-      - TIME_MIN_AFK=600
+      - TIME_MIN_AFK=40
     network_mode: host
     restart: unless-stopped

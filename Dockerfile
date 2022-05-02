@@ -3,9 +3,9 @@ FROM debian:bullseye-slim
 LABEL version="0.1" maintainer="GARRIGUES Clement <tecnelm91@gmail.com>"
 ENV TOKEN=""
 ENV PORT=6789
-ENV ADDRESS="127.0.0.1"
+ENV ADDRESS=''
 ENV MAC=""
-ENV TIME_MIN_AFK=600
+ENV TIME_MIN_AFK=60
 
 RUN apt-get update -y &&\
 	apt-get upgrade -y &&\
