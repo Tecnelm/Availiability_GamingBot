@@ -13,7 +13,7 @@ class TCPServer (threading.Thread):
             except yaml.YAMLError as exc:
                 print("ERROR: Load Config File")
 
-        self.server.bind((self.config["ip"],self.config["port"]))
+        self.server.bind((socket.gethostname(),self.config["port"]))
         self.client=[]
         self.server.listen(2)
 
