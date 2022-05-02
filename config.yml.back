@@ -1,5 +1,5 @@
 Discord:
-  token: "NzE5NDcxMjEyODAzMjYwNDU4.GZ2vsD.29ey6AEqrLcBslNtxxRcFVgjHp2Bi7254Rq8wg"
+  token: $token
   commande:
     start: "!"
     cmd:
@@ -19,15 +19,15 @@ Discord:
       available: "l'ordinateur est en inactivité depuis: "
       unvailable: "L'ordinateur est actuelement non disponnible!"
       switched_off: "L'ordinateur est actuelement éteind"
-      timeMin: 60
+      timeMin: $timeMinAFK
       commande: "time"
 
     pong: "Ping!"
 
 Startup:
   wol:
-    mac: "d4:5d:64:b9:9f:f1"
+    mac: $mac
 
 Server:
-  port: 6789
-  ip: ''
+  port: $port
+  ip: $address
