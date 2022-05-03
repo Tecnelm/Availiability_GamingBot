@@ -1,10 +1,6 @@
 Discord:
   response:
     ask:
-      available: "l'ordinateur est en inactivité depuis: "
-      unvailable: "L'ordinateur est actuelement non disponnible!"
-      switched_off: "L'ordinateur est actuelement éteind"
-      timeMin: $timeMinAFK
       commande: "time"
 
 Server:
