@@ -4,5 +4,5 @@ Discord:
       commande: "time"
 
 Server:
-  port: 6789
-  ip: "192.168.1.24"
+  port: <Port on the raspberry>
+  ip: <IP of the raspberrypi>

@@ -4,10 +4,10 @@ services:
     image: tecnelm/discordbot:latest
     container_name: botDiscord
     environment:
-      - TOKEN="NzE5NDcxMjEyODAzMjYwNDU4.GZ2vsD.29ey6AEqrLcBslNtxxRcFVgjHp2Bi7254Rq8wg"
-      - PORT=6789
-      - ADDRESS=''
-      - MAC="d4:5d:64:b9:9f:f1"
-      - TIME_MIN_AFK=40
+      - TOKEN=<token of discordBot>
+      - PORT=<port to lister>
+      - ADDRESS=<address on wich interface to listen '' for all>
+      - MAC=<Mac address of the computer to WOL>
+      - TIME_MIN_AFK= <time to accept afk>
     network_mode: host
     restart: unless-stopped
